@@ -1,0 +1,614 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #071318;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  padding: 90px 10%;
+}
+
+.mini-title {
+  color: #45f3ff;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+header {
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 10%;
+
+  background: #071318;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #45f3ff;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  font-size: 14px;
+  color: #b5c1c4;
+}
+
+nav a:hover {
+  color: #45f3ff;
+}
+
+.hero {
+  min-height: 600px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+.hero-text {
+  max-width: 550px;
+}
+
+.hero h1 {
+  font-size: 55px;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #45f3ff;
+}
+
+.hero-text > p:not(.mini-title) {
+  color: #9aa9ad;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.hero-circle {
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: radial-gradient(circle, #00a97f, #071318 70%);
+
+  box-shadow: 0 0 80px rgba(0, 169, 127, 0.4);
+}
+
+.hero-circle span {
+  width: 120px;
+  height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #45f3ff;
+
+  color: #071318;
+
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.nova-btn {
+  --color: #00a97f;
+  --color2: #071318;
+
+  display: inline-block;
+
+  padding: 0.8em 1.75em;
+
+  background-color: transparent;
+
+  border-radius: 6px;
+
+  border: 0.3px solid var(--color);
+
+  transition: 0.5s;
+
+  position: relative;
+  overflow: hidden;
+
+  cursor: pointer;
+
+  z-index: 1;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  color: var(--color);
+
+  text-transform: uppercase;
+}
+
+.nova-btn::after,
+.nova-btn::before {
+  content: "";
+
+  display: block;
+
+  height: 100%;
+  width: 100%;
+
+  transform: skew(90deg) translate(-50%, -50%);
+
+  position: absolute;
+
+  inset: 50%;
+  left: 25%;
+
+  z-index: -1;
+
+  transition: 0.5s ease-out;
+
+  background-color: var(--color);
+}
+
+.nova-btn::before {
+  top: -50%;
+  left: -25%;
+
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.nova-btn:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.nova-btn:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+}
+
+.nova-btn:hover {
+  color: var(--color2);
+}
+
+.nova-btn:active {
+  transform: scale(0.98);
+}
+
+.producto {
+  background: #f4f8f7;
+  color: #071318;
+}
+
+.producto h2 {
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.producto-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.nova-card {
+  position: relative;
+
+  width: 190px;
+  height: 254px;
+
+  background-color: #000;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  padding: 12px;
+  gap: 12px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  color: white;
+
+  z-index: 0;
+}
+
+.nova-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+  left: -5px;
+
+  margin: auto;
+
+  width: 200px;
+  height: 264px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nova-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+
+  transform: translate3d(0, 0, 0) scale(0.95);
+
+  filter: blur(20px);
+
+  z-index: -2;
+
+  pointer-events: none;
+
+  transition: 0.5s;
+}
+
+.nova-card:hover::before {
+  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+}
+
+.nova-card:hover::after {
+  filter: blur(30px);
+}
+
+.card-icon {
+  font-size: 35px;
+
+  margin-bottom: auto;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nova-card p:not(.card-title) {
+  font-size: 14px;
+}
+
+.card-price {
+  color: #45f3ff;
+
+  font-weight: bold;
+}
+
+.contacto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 70px;
+
+  background: #0b2027;
+}
+
+.contacto-texto {
+  max-width: 450px;
+}
+
+.contacto h2 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.contacto-texto > p:last-child {
+  color: #9aa9ad;
+  line-height: 1.6;
+}
+
+form {
+  width: 350px;
+}
+
+.nova-input {
+  position: relative;
+
+  width: 100%;
+
+  margin-bottom: 30px;
+}
+
+.nova-input input {
+  position: relative;
+
+  width: 100%;
+
+  padding: 20px 10px 10px;
+
+  background: transparent;
+
+  outline: none;
+
+  border: none;
+
+  color: white;
+
+  font-size: 1em;
+
+  letter-spacing: 0.05em;
+
+  transition: 0.5s;
+
+  z-index: 10;
+}
+
+.nova-input span {
+  position: absolute;
+
+  left: 0;
+
+  padding: 20px 10px 10px;
+
+  color: #8f9b9e;
+
+  transition: 0.5s;
+
+  pointer-events: none;
+}
+
+.nova-input input:valid ~ span,
+.nova-input input:focus ~ span {
+  color: #45f3ff;
+
+  transform: translateX(-10px) translateY(-34px);
+
+  font-size: 0.75em;
+}
+
+.nova-input i {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: #45f3ff;
+
+  border-radius: 4px;
+
+  transition: 0.5s;
+
+  pointer-events: none;
+
+  z-index: 9;
+}
+
+.nova-input input:valid ~ i,
+.nova-input input:focus ~ i {
+  height: 44px;
+}
+
+.nova-toggle .check {
+  --size: 40px;
+
+  position: relative;
+
+  background: linear-gradient(90deg, #f19af3, #f099b5);
+
+  line-height: 0;
+
+  font-size: var(--size);
+}
+
+.nova-toggle .check input[type="checkbox"],
+.nova-toggle .check label,
+.nova-toggle .check label::before,
+.nova-toggle .check label::after,
+.nova-toggle .check {
+  appearance: none;
+
+  display: inline-block;
+
+  border-radius: var(--size);
+
+  border: 0;
+
+  transition: 0.35s ease-in-out;
+
+  box-sizing: border-box;
+
+  cursor: pointer;
+}
+
+.nova-toggle .check label {
+  width: calc(2.2 * var(--size));
+
+  height: var(--size);
+
+  background: #d7d7d7;
+
+  overflow: hidden;
+}
+
+.nova-toggle .check input[type="checkbox"] {
+  position: absolute;
+
+  z-index: 1;
+
+  width: calc(0.8 * var(--size));
+  height: calc(0.8 * var(--size));
+
+  top: calc(0.1 * var(--size));
+  left: calc(0.1 * var(--size));
+
+  background: linear-gradient(45deg, #dedede, #ffffff);
+
+  box-shadow: 0 6px 7px rgba(0, 0, 0, 0.3);
+
+  outline: none;
+
+  margin: 0;
+}
+
+.nova-toggle .check input[type="checkbox"]:checked {
+  left: calc(1.3 * var(--size));
+}
+
+.nova-toggle .check input[type="checkbox"]:checked + label {
+  background: transparent;
+}
+
+.nova-toggle .check label::before,
+.nova-toggle .check label::after {
+  content: "· ·";
+
+  position: absolute;
+
+  left: calc(0.15 * var(--size));
+  top: calc(0.5 * var(--size));
+
+  height: var(--size);
+
+  color: #9b9b9b;
+
+  z-index: 2;
+
+  font-size: calc(0.6 * var(--size));
+}
+
+.nova-toggle .check label::after {
+  content: "●";
+
+  top: calc(0.65 * var(--size));
+  left: calc(0.2 * var(--size));
+
+  font-size: calc(0.2 * var(--size));
+}
+
+.nova-toggle .check input[type="checkbox"]:checked + label::before,
+.nova-toggle .check input[type="checkbox"]:checked + label::after {
+  left: calc(1.55 * var(--size));
+
+  top: calc(0.4 * var(--size));
+
+  transform: rotateY(360deg);
+}
+
+.toggle-area {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  color: #c5d0d3;
+
+  font-size: 13px;
+
+  margin-bottom: 25px;
+}
+
+footer {
+  padding: 25px 10%;
+
+  text-align: center;
+
+  background: #050e12;
+
+  color: #718084;
+
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 0 5%;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  section {
+    padding: 70px 7%;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-circle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-circle span {
+    width: 90px;
+    height: 90px;
+    font-size: 40px;
+  }
+
+  .producto-contenido {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .producto-info {
+    text-align: center;
+  }
+
+  .contacto {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  form {
+    width: 100%;
+  }
+}

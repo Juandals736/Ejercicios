@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Anime.js - Mis habilidades</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="titulo">Mis habilidades</h1>
+      <p class="subtitulo">Ejemplo práctico con Anime.js</p>
+    </header>
+    <main class="grid">
+      <article class="card">
+        <h2>HTML</h2>
+        <div class="barra"><div class="progreso" data-valor="90"></div></div>
+        <span class="porcentaje">0%</span>
+      </article>
+      <article class="card">
+        <h2>CSS</h2>
+        <div class="barra"><div class="progreso" data-valor="80"></div></div>
+        <span class="porcentaje">0%</span>
+      </article>
+      <article class="card">
+        <h2>JavaScript</h2>
+        <div class="barra"><div class="progreso" data-valor="70"></div></div>
+        <span class="porcentaje">0%</span>
+      </article>
+      <article class="card">
+        <h2>Git</h2>
+        <div class="barra"><div class="progreso" data-valor="60"></div></div>
+        <span class="porcentaje">0%</span>
+      </article>
+      <article class="card">
+        <h2>Java</h2>
+        <div class="barra"><div class="progreso" data-valor="51"></div></div>
+        <span class="porcentaje">0%</span>
+      </article>
+    </main>
+    <button id="btnRepetir">Reproducir de nuevo</button>
+    <!-- 1. Cargar Anime.js desde CDN (versión UMD: expone el objeto global "anime") -->
+    <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+    <!-- 2. Cargar nuestro código DESPUÉS de la librería -->
+    <script src="app.js"></script>
+  </body>
+</html>
